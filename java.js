@@ -1,4 +1,10 @@
+const openModal = document.querySelector(".new-book");
+const modal = document.querySelector(".modal");
 const myLibrary = [];
+
+openModal.addEventListener("click", () => {
+    modal.showModal();
+})
 
 
 
@@ -10,15 +16,12 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    
+
 }
+    
 
 
 
 
-
-
-
-//const book1 = new Book('harry potter,', ' jk,', ' 43,', ' not read');
 
 

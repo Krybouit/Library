@@ -2,6 +2,9 @@
     box-sizing: border-box;
     padding: 0%;
     margin: 0%;
+}
+
+body {
     background-color: #212121;
 }
 
@@ -23,6 +26,10 @@ h1 {
     color: white;
 }
 
+h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+}
 
 .new-book {
     background: white;
@@ -43,5 +50,49 @@ h1 {
 .new-book:active {
     transform: translate(-0.05em, 0.05em);
     box-shadow: -0.05em 0.05em;
-  }
+}
   
+.modal {
+    margin-left: 40%;
+    margin-top: 12%;
+    border-radius: 0.4em;
+}
+
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 27px;
+    width: 308px;
+    height: 389px;
+    background-color: white;
+}
+
+
+input[type=text], input[type=number] {
+    width: 260px;
+    height: 35px;
+    padding-left: 5px;
+    font-size: 1.2rem;
+}
+
+input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+}
+
+::backdrop {
+    opacity: 99%;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.checkbox p {
+    font-size: 1.5rem;
+}

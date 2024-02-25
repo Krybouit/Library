@@ -11,6 +11,31 @@
         <h1>Your Library</h1>
         <button class="new-book">+ New Book</button>
     </header>
+    <dialog class="modal">
+        <form action="" method="dialog">
+            <div class="book-form">
+                <h2>New Book</h2>
+                <div class="form-input">
+                    <label for="title"></label>
+                    <input type="text" name="title" id="title" placeholder="Title" required>
+                </div>
+                <div class="form-input">
+                    <label for="author"></label>
+                    <input type="text" name="author" id="author" placeholder="Author" required>    
+                </div>
+                <div class="form-input">
+                    <label for="pages"></label>
+                    <input type="number" name="pages" id="pages" placeholder="Pages" required>
+                </div>
+                <div class="checkbox">
+                    <label for="checkbox"></label>
+                    <p>Have you read it?</p>
+                    <input type="checkbox" name="checkbox">
+                </div>
+                <button type="submit" class="new-book">Add</button>
+            </div>
+        </form>
+    </dialog>
     <script src="java.js"></script>
 </body>
 </html>
