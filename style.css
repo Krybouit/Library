@@ -51,10 +51,11 @@ h2 {
     transform: translate(-0.05em, 0.05em);
     box-shadow: -0.05em 0.05em;
 }
-  
+
 .modal {
-    margin-left: 40%;
-    margin-top: 12%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 0.4em;
 }
 
@@ -69,12 +70,20 @@ h2 {
     background-color: white;
 }
 
-
-input[type=text], input[type=number] {
+.form-input :nth-child(2) {
     width: 260px;
     height: 35px;
-    padding-left: 5px;
     font-size: 1.2rem;
+    padding: 7px;
+    border-radius: 6px;
+    background: #fbfbfb;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
+}
+
+.form-input :nth-child(2):focus{
+    border: 2px solid #000;
+    border-radius: 4px;
 }
 
 input[type=checkbox] {
@@ -95,4 +104,23 @@ input[type=checkbox] {
 
 .checkbox p {
     font-size: 1.5rem;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 52px;
+}
+
+.form-buttons :nth-child(1) {
+    background-color: red;
+    color: white;
+    border: 2px solid black;
+    font-size: 16px;
+}
+
+.form-buttons :nth-child(2) {
+    background-color: #3c4fe0;
+    color: white;
+    border: 2px solid black;
+    font-size: 16px;
 }
