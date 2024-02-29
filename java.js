@@ -10,7 +10,10 @@ openModal.addEventListener("click", () => {
 
 cancelBtn.addEventListener("click", () => {
     modal.close();
+    form.reset();
 })
+
+
 
 function Book(title, author, pages, read) {  
     this.title = title;
@@ -33,6 +36,8 @@ form.addEventListener("submit", function addBookToLibrary(e) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
     console.log(myLibrary);
+    modal.close();
+    form.reset();
 })
 
 
