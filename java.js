@@ -1,7 +1,7 @@
 const openModal = document.querySelector(".new-book");
 const modal = document.querySelector(".modal");
 const cancelBtn = document.getElementById("cancel-button");
-const submitBtn = document.getElementById("submit");
+const form = document.getElementById("form");
 const myLibrary = [];
 
 openModal.addEventListener("click", () => {
@@ -19,8 +19,8 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
  
-submitBtn.addEventListener("click", function addBookToLibrary(e) {
-    e.preventDefault()
+form.addEventListener("submit", function addBookToLibrary(e) {
+    e.preventDefault();
     let title = document.getElementById("title").value;
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
