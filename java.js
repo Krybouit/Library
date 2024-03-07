@@ -48,11 +48,10 @@ function bookLoops() {
         const bookBox = document.createElement("div");
         bookList.appendChild(bookBox);
         bookBox.setAttribute("class","book-container");
-        bookBox.innerHTML =
-            "Title: " + myLibrary[0].title +
-            " Author: " + myLibrary[0].author +
-            " Pages: " + myLibrary[0].pages +
-            " Read: " + myLibrary[0].read;
+        bookBox.innerHTML += "<p>Title: " + myLibrary[0].title + "</p>";
+        bookBox.innerHTML += "<p>Author: " + myLibrary[0].author + "</p>";
+        bookBox.innerHTML +=  "<p>Pages: " + myLibrary[0].pages + "</p>";
+        bookBox.innerHTML += "<p>Read: " + myLibrary[0].read + "</p>";
         clearLibrary();
         console.log(myLibrary);
     }
