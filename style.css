@@ -27,10 +27,6 @@ h1 {
     color: white;
 }
 
-h2 {
-    font-size: 1.8rem;
-    margin-top: 20px;
-}
 
 .new-book {
     background: white;
@@ -126,12 +122,22 @@ input[type=checkbox] {
     font-size: 16px;
 }
 
-
-
-
+#book-list {
+    display: flex;
+    margin-top: 80px;
+    margin-left: 60px;
+    gap: 78px;
+}
 
 
 .book-container {
     display: grid;
-    
+    font-family:'OpenSans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    grid-auto-rows: 70px;
+    background-color: white;
+    width: 250px;
+    height: 350px;
+    border-radius: 6px;
 }

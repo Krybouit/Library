@@ -30,17 +30,12 @@ form.addEventListener("submit", function addBookToLibrary(e) {
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
     let read = document.getElementById("checkbox").checked;
-    if (read === true) {
-        read = "yes";
-    } else {
-        read = "no";
-    }
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
     modal.close();
     form.reset();
     bookLoops();
-   
+    clearLibrary();
 })
 
 
@@ -48,17 +43,42 @@ function bookLoops() {
         const bookBox = document.createElement("div");
         bookList.appendChild(bookBox);
         bookBox.setAttribute("class","book-container");
-        bookBox.innerHTML += "<p>Title: " + myLibrary[0].title + "</p>";
-        bookBox.innerHTML += "<p>Author: " + myLibrary[0].author + "</p>";
-        bookBox.innerHTML +=  "<p>Pages: " + myLibrary[0].pages + "</p>";
-        bookBox.innerHTML += "<p>Read: " + myLibrary[0].read + "</p>";
-        clearLibrary();
-        console.log(myLibrary);
+        bookBox.innerHTML += "<h2>" + myLibrary[0].title + "</h2>";
+        bookBox.innerHTML += "<p>By: " + myLibrary[0].author + "</p>";
+        bookBox.innerHTML += "<p>Pages: " + myLibrary[0].pages + "</p>";
+        const readBtn = document.createElement("button");
+        const removeBtn = document.createElement("button");
+        bookBox.append(readBtn);
+        bookBox.append(removeBtn);
+        removeBtn.textContent = "Delete";
+       if (myLibrary[0].read === true) {
+        readBtn.textContent = "Read";
+       } else {
+        readBtn.textContent = "not read";
+       };
+        readBtn.addEventListener("click", function() {
+            if(readBtn.textContent === "Read") {
+                readBtn.textContent = "not read";
+            } else {
+                readBtn.textContent = "Read"
+            }
+        });
+        removeBtn.addEventListener("click", function() {
+          bookBox.remove();
+        });
     }
+
+
+
+
+
 
 function clearLibrary() {
     myLibrary = [];
 }
+
+
+
 
 
 
