@@ -5,8 +5,6 @@ const form = document.getElementById("form");
 const bookList = document.getElementById("book-list");
 let myLibrary = [];
 
-
-
 openModal.addEventListener("click", () => {
     modal.showModal();
 })
@@ -15,7 +13,6 @@ cancelBtn.addEventListener("click", () => {
     modal.close();
     form.reset();
 })
-
 
 function Book(title, author, pages, read) {  
     this.title = title;
@@ -38,29 +35,35 @@ form.addEventListener("submit", function addBookToLibrary(e) {
     clearLibrary();
 })
 
-
 function bookLoops() {
         const bookBox = document.createElement("div");
         bookList.appendChild(bookBox);
         bookBox.setAttribute("class","book-container");
         bookBox.innerHTML += "<h2>" + myLibrary[0].title + "</h2>";
-        bookBox.innerHTML += "<p>By: " + myLibrary[0].author + "</p>";
+        bookBox.innerHTML += "<p>Book by: " + myLibrary[0].author + "</p>";
         bookBox.innerHTML += "<p>Pages: " + myLibrary[0].pages + "</p>";
         const readBtn = document.createElement("button");
         const removeBtn = document.createElement("button");
         bookBox.append(readBtn);
         bookBox.append(removeBtn);
+        readBtn.setAttribute("id","toggle-read");
+        removeBtn.setAttribute("id","delete");
+        removeBtn.style.backgroundColor = "red";
         removeBtn.textContent = "Delete";
        if (myLibrary[0].read === true) {
         readBtn.textContent = "Read";
+        readBtn.style.backgroundColor = "#2ea44f";
        } else {
         readBtn.textContent = "not read";
+        readBtn.style.backgroundColor = "red";
        };
         readBtn.addEventListener("click", function() {
             if(readBtn.textContent === "Read") {
                 readBtn.textContent = "not read";
+                readBtn.style.backgroundColor = "red"
             } else {
                 readBtn.textContent = "Read"
+                readBtn.style.backgroundColor = "#2ea44f"
             }
         });
         removeBtn.addEventListener("click", function() {
@@ -68,14 +71,9 @@ function bookLoops() {
         });
     }
 
-
-
-
-
-
 function clearLibrary() {
     myLibrary = [];
-}
+};
 
 
 
