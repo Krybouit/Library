@@ -37,19 +37,24 @@ form.addEventListener("submit", function addBookToLibrary(e) {
 
 function bookLoops() {
         const bookBox = document.createElement("div");
+        const readBtn = document.createElement("button");
+        const removeBtn = document.createElement("button");
+
         bookList.appendChild(bookBox);
         bookBox.setAttribute("class","book-container");
+
         bookBox.innerHTML += "<h2>" + myLibrary[0].title + "</h2>";
         bookBox.innerHTML += "<p>Book by: " + myLibrary[0].author + "</p>";
         bookBox.innerHTML += "<p>Pages: " + myLibrary[0].pages + "</p>";
-        const readBtn = document.createElement("button");
-        const removeBtn = document.createElement("button");
+
         bookBox.append(readBtn);
         bookBox.append(removeBtn);
         readBtn.setAttribute("id","toggle-read");
         removeBtn.setAttribute("id","delete");
+
         removeBtn.style.backgroundColor = "red";
         removeBtn.textContent = "Delete";
+
        if (myLibrary[0].read === true) {
         readBtn.textContent = "Read";
         readBtn.style.backgroundColor = "#2ea44f";
@@ -57,6 +62,7 @@ function bookLoops() {
         readBtn.textContent = "not read";
         readBtn.style.backgroundColor = "red";
        };
+
         readBtn.addEventListener("click", function() {
             if(readBtn.textContent === "Read") {
                 readBtn.textContent = "not read";
@@ -66,11 +72,13 @@ function bookLoops() {
                 readBtn.style.backgroundColor = "#2ea44f"
             }
         });
+
         removeBtn.addEventListener("click", function() {
           bookBox.remove();
         });
     }
 
+  
 function clearLibrary() {
     myLibrary = [];
 };
